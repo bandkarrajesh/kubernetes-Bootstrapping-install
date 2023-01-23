@@ -27,8 +27,8 @@ sudo sysctl --system
 
 # Install Calico for kubernetes networking
 cd /usr/local/bin/
-curl -L https://github.com/projectcalico/calico/releases/download/v3.24.5/calicoctl-linux-amd64 -o kubectl-calico
-sudo curl -L https://github.com/projectcalico/calico/releases/download/v3.24.5/calicoctl-linux-amd64 -o kubectl-calico
+curl -L https://github.com/projectcalico/calico/releases/download/3.25.0/calicoctl-linux-amd64 -o kubectl-calico
+sudo curl -L https://github.com/projectcalico/calico/releases/download/3.25.0/calicoctl-linux-amd64 -o kubectl-calico
 sudo chmod +x kubectl-calico
 
 sudo reboot
@@ -61,9 +61,9 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 # Calico operator installation.
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.5/manifests/tigera-operator.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/tigera-operator.yaml
 kubectl get pods -o wide -A
-wget https://raw.githubusercontent.com/projectcalico/calico/v3.24.5/manifests/custom-resources.yaml
+wget https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/custom-resources.yaml
 
 # Edit custom-resources.yaml as per below config.
 
